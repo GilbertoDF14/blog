@@ -1,3 +1,6 @@
+<?php
+    require_once 'seguridad.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,10 +23,10 @@
         
         <div class="collapse navbar-collapse" id="menuPrincipal">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="inicio.html" >Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="inicio.php" >Inicio</a></li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="mensajes.html" >Mensajes</a></li>
+                <li class="nav-item"><a class="nav-link" href="mensajes.php" >Mensajes</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="usuarios.html" >Usuario</a></li>
