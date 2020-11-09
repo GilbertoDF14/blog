@@ -29,7 +29,7 @@ function agregarTema(){
 function actualizar(){
     $("#tablaTemas").html('');
     for(let i = 0 ; i < temas.length; i++){
-        let fila = "<tr><td>" + temas[i].id + "</td><td>" + temas[i].tema + "</td>";
+        let fila = "<tr><td>" + temas[i].id + "</td><td onclick='ver("+ temas[i].id +",\""+ temas[i].tema +"\")'>" + temas[i].tema + "</td>";
         fila = fila + "<td><button onclick='editarTema("+ temas[i].id +");' class='btn btn-primary' data-toggle='modal' data-target='#modificaTema'>";
         fila += "<i class='material-icons align-middle'>edit</i></button>";
         fila += "<button onclick='eliminarTema("+ temas[i].id +");' class='btn btn-danger' data-toggle='modal' data-target='#eliminaTema'>";
@@ -98,4 +98,10 @@ function consulta(){
     }).fail(function(){
         
     });
+}
+
+function ver (idtema, tema){
+    sessionStorage.setItem("idtema",idtema);
+    sessionStorage.setItem("tema",tema);
+    location.href="mensajes.php";
 }
