@@ -5,6 +5,7 @@ function login(){
     p=document.getElementById("pass").value;
 
     $.getJSON("login.php",{user:u,pass:p}).done(function(datos){
+        console.log(datos);
         if(datos.resp=="si"){
             location.href="inicio.php";
         }else{

@@ -3,7 +3,7 @@
 function conexion (){
     $server="localhost";
     $user="root";
-    $pass="Sistemas";
+    $pass="";
     $bd="blog";
 
     try{
