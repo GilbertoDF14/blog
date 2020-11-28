@@ -11,12 +11,15 @@ console.log(mensajes);
 $("#nombreUsuario").text('Rafa');
 
 function agregarAmigo(){
-    let user = $("#user").val();
-    usId ++;
-    nuevoUsuario = {id: usId,usuario:user, tema: 'Redes', fecha:'2020-10-10'};
-    usuarios.push(nuevoUsuario);
-    console.log(usuarios);
-    actualizar();
+    let id=sessionStorage.getItem("idtema");
+    let user = $("#mensaje").val();
+    $.getJSON("crud_usuarios.php",{operacion:'C',idtema:id,mensaje:msg}).done(function(datos){
+        if(datos.resp=="si"){
+            consulta();
+        }else{
+            //error
+        }
+    }).fail(function(){});
 }
 
 function actualizar(){
@@ -58,11 +61,13 @@ function confirmaEliminar(){
 }
 
 function guardaCambios(){
-    for(let i = 0 ; i < usuarios.length; i++){
-        if(usuarios[i].id==idaeditar){
-            usuarios[i].usuario = $("#usEditar").val();
-            break;
+    us=$("#usEditar").val();
+    $.getJSON("crud_usuarios.php",{operacion:'U',id:idaeditar,nombre:us}).done(function(datos){
+        if(datos.resp=="si"){
+            consulta();
+        }else{
+            //error
         }
-    }
+    });
     actualizar();
 }

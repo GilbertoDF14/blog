@@ -1,3 +1,6 @@
+<?php
+    require_once 'seguridad.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -70,19 +73,17 @@
                 <table class="table table-hover table-dark">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Usuario</th>
-                            <th>Tema</th>
-                            <th>Ultima Fecha de conexion</th>
+                            <th>Tipo</th>
+                            <th>Nombre</th>
                             <th>...</th>
                         </tr>
                     </thead>
                     <tbody id="tablaUs">
                         <tr>
-                            <td>1</td>
-                            <td>Admin</td>
-                            <td>Matematicas</td>
-                            <td>2020-09-28</td>
+                            <td>admin</td>
+                            <td>A</td>
+                            <td>Administrador</td>
                             <td>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modificaUs"><i class="material-icons align-middle">edit</i></button>
                                 <button class="btn btn-danger"><i class="material-icons align-middle" data-toggle="modal" data-target="#eliminaUs">cancel</i></button>
